@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Probabilidade</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .sala { max-width:520px; margin:40px auto; padding:0 16px; }
+    .sala h1 { font-size:20px; margin-bottom:14px; }
+    .campo { display:flex; flex-direction:column; gap:6px; margin-bottom:12px; color:var(--suave); font-size:13px; }
+    .campo input { background:var(--fundo); border:1px solid var(--borda); color:var(--texto); border-radius:8px; padding:10px 12px; font-size:15px; }
+    button { background:var(--verde); border:none; color:#fff; font-weight:700; border-radius:8px; padding:12px 18px; font-size:15px; cursor:pointer; }
+    .resultado { margin-top:16px; background:var(--carta); border:1px solid var(--borda); border-radius:10px; padding:14px; font-family:Consolas,monospace; font-size:14px; white-space:pre-line; }
+    a.voltar { color:var(--suave); font-size:13px; display:inline-block; margin-bottom:12px; }
+  </style>
+</head>
+<body>
+  <div class="sala">
+    <a class="voltar" href="../../index.html">← voltar ao arcade</a>
+    <h1>🎲 Calculadora de Probabilidade</h1>
+    <p style="color:var(--suave);font-size:13px;margin-bottom:14px">Port do exercício Senac <code>Calculadoradeprobabilidade.java</code> — fórmulas fiéis ao original.</p>
+    <label class="campo">n <input id="n" type="number" value="10"></label>
+    <label class="campo">x <input id="x" type="number" value="3"></label>
+    <label class="campo">taxa de sucesso (%) <input id="sucesso" type="number" value="60"></label>
+    <label class="campo">taxa de insucesso (%) <input id="insucesso" type="number" value="40"></label>
+    <button id="calcular">Calcular</button>
+    <div id="saida" class="resultado" hidden></div>
+  </div>
+  <script type="module">
+    import { combinacao, taxaSucesso, taxaInsucesso } from './estatistica.js';
+    document.getElementById('calcular').onclick = () => {
+      const n = +document.getElementById('n').value;
+      const x = +document.getElementById('x').value;
+      const sucesso = +document.getElementById('sucesso').value;
+      const insucesso = +document.getElementById('insucesso').value;
+      const c = combinacao(x, n);
+      const saida = document.getElementById('saida');
+      saida.hidden = false;
+      saida.textContent =
+        `Resultado fatorial: ${c}\nTaxa de sucesso: ${taxaSucesso(c, sucesso, insucesso)}\nTaxa de insucesso: ${taxaInsucesso(sucesso, insucesso)}`;
+    };
+  </script>
+</body>
+</html>
