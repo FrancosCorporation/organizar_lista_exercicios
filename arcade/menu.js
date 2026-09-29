@@ -1,7 +1,14 @@
 // Menu do arcade: lê manifest.json (gerado do inventário dedup dos .java originais)
 // e lista os apps por categoria com status (portado/pendente).
 const MAPA_SALAS = {
-  'Calculadoradeprobabilidade': 'apps/estatistica/'
+  'Calculadoradeprobabilidade': 'apps/estatistica/',
+  'Logica_1': 'apps/conversor-bases/',
+  'NewFrontEnd': 'apps/conversor-bases/',
+  'Estatistica_calc_quartis': 'apps/quartis/',
+  'MetodoCompareTo': 'apps/compare-to/',
+  'CaixaDialogoComReturn': 'apps/dialogo-data/',
+  'ClasseDeCalculo': 'apps/dialogo-data/',
+  'ClassePrincipal': 'apps/dialogo-data/'
 };
 
 fetch('manifest.json')
