@@ -1,0 +1,62 @@
+:root {
+  color-scheme: light;
+  --ink: #1b2730;
+  --muted: #526572;
+  --paper: #f4f7f6;
+  --surface: #fff;
+  --line: #cbd6d6;
+  --accent: #176b57;
+  --accent-dark: #104b3e;
+  --focus: #bd5e00;
+  --error: #9c2626;
+  --success: #176344;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: var(--paper); color: var(--ink); font: 16px/1.55 system-ui, sans-serif; }
+a { color: var(--accent-dark); }
+.app-header { background: var(--ink); color: #fff; }
+.app-header-inner, .app-main { width: min(100% - 32px, 820px); margin: 0 auto; }
+.app-header-inner { padding: 22px 0 26px; }
+.back-link { display: inline-block; margin-bottom: 14px; color: #bcebdc; text-underline-offset: 3px; }
+h1 { margin: 0; font-size: clamp(1.65rem, 5vw, 2.35rem); line-height: 1.18; }
+.lead { max-width: 680px; margin: 10px 0 0; color: #d3e0e5; }
+.app-main { padding: 28px 0 52px; }
+.app-card { padding: clamp(18px, 4vw, 30px); border: 1px solid var(--line); border-radius: 16px; background: var(--surface); box-shadow: 0 10px 28px #1b27300d; }
+.app-card + .app-card { margin-top: 18px; }
+.app-card h2 { margin: 0 0 8px; font-size: 1.2rem; }
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); align-items: end; gap: 14px; }
+.field { display: grid; min-width: 0; gap: 6px; }
+.field label { font-weight: 700; }
+.field small, .hint { color: var(--muted); }
+input, select, textarea, button { font: inherit; }
+input, select, textarea { width: 100%; min-height: 46px; padding: 10px 12px; border: 1px solid #83939a; border-radius: 8px; background: #fff; color: var(--ink); }
+textarea { min-height: 120px; resize: vertical; }
+input[type="checkbox"] { width: 1.2rem; min-height: 1.2rem; accent-color: var(--accent); }
+button, .button-link { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; padding: 10px 16px; border: 0; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 750; text-align: center; text-decoration: none; cursor: pointer; }
+button:hover, .button-link:hover { background: var(--accent-dark); }
+button.secondary { border: 1px solid var(--line); background: #edf2f1; color: var(--ink); }
+button.secondary:hover { background: #dfe8e5; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 16px; }
+.message { min-height: 1.6em; margin: 16px 0 0; color: var(--muted); }
+.message.error { color: var(--error); font-weight: 700; }
+.message.success { color: var(--success); font-weight: 700; }
+.result { margin-top: 18px; padding: 16px; border: 1px solid var(--line); border-radius: 10px; background: #f8fbfa; overflow-wrap: anywhere; }
+.result[hidden], [hidden] { display: none !important; }
+.result strong { display: block; margin-bottom: 4px; }
+.data-table-wrap { width: 100%; overflow-x: auto; margin-top: 16px; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+th, td { padding: 11px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: #edf2f1; }
+.empty-row { color: var(--muted); text-align: center; }
+.preview { display: grid; min-height: 180px; place-items: center; margin: 18px 0 0; border: 1px dashed #83939a; border-radius: 10px; background: #f8fbfa; }
+.preview img { display: block; max-width: 100%; max-height: 520px; object-fit: contain; }
+.check-field { display: flex; align-items: center; gap: 10px; }
+pre.output-list { max-height: 360px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+.metric { display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 12px; margin-top: 18px; }
+.metric > div { padding: 12px; border-radius: 9px; background: #edf2f1; }
+.metric dt { color: var(--muted); font-size: .85rem; }
+.metric dd { margin: 2px 0 0; font-size: 1.15rem; font-weight: 750; }
+@media (max-width: 520px) { .app-header-inner, .app-main { width: min(100% - 24px, 820px); } .app-header-inner { padding-top: 18px; } .actions > button, .actions > .button-link { flex: 1 1 100%; } th, td { padding: 9px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Exercício de tabela de contatos, sem salvar dados fora desta página.">
+  <title>Tabela de contatos · Arcade Java → JS</title>
+  <link rel="stylesheet" href="../../app.css"><script type="module" src="contatos.js"></script>
+</head>
+<body>
+  <header class="app-header"><div class="app-header-inner"><a class="back-link" href="/arcade/">← Voltar ao catálogo</a><h1>Tabela de contatos</h1><p class="lead">O exemplo Java recebia uma lista e mostrava nome e e-mail. Adicione contatos para visualizar como linhas da tabela.</p></div></header>
+  <main class="app-main">
+    <section class="app-card"><h2>Adicionar contato</h2>
+      <form id="form-contato" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="nome">Nome</label><input id="nome" autocomplete="name" maxlength="80" required></div>
+          <div class="field"><label for="email">E-mail</label><input id="email" type="email" autocomplete="email" maxlength="254" required></div>
+        </div>
+        <div class="actions"><button type="submit">Adicionar à tabela</button></div>
+      </form>
+      <p id="mensagem" class="message" role="status" aria-live="polite">Os dados ficam apenas na memória desta página.</p>
+    </section>
+    <section class="app-card"><h2>Contatos da sessão</h2>
+      <div class="data-table-wrap"><table><caption class="hint">Contatos adicionados até você fechar ou atualizar esta página</caption><thead><tr><th scope="col">Nome</th><th scope="col">E-mail</th><th scope="col">Ação</th></tr></thead><tbody id="linhas"></tbody></table></div>
+    </section>
+  </main>
+</body>
+</html>

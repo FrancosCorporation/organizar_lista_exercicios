@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Escolha uma imagem do dispositivo para visualizar no navegador.">
+  <title>Visualizar imagem local · Arcade Java → JS</title>
+  <link rel="stylesheet" href="../../app.css"><script type="module" src="imagem.js"></script>
+</head>
+<body>
+  <header class="app-header"><div class="app-header-inner"><a class="back-link" href="/arcade/">← Voltar ao catálogo</a><h1>Visualizar imagem local</h1><p class="lead">Escolha um arquivo no seu dispositivo. A imagem é mostrada nesta página e não é enviada para nenhum servidor.</p></div></header>
+  <main class="app-main"><section class="app-card">
+    <div class="field"><label for="arquivo">Imagem (até 10 MB)</label><input id="arquivo" type="file" accept="image/*" aria-describedby="mensagem"></div>
+    <p id="mensagem" class="message" role="status" aria-live="polite">Nenhuma imagem selecionada.</p>
+    <figure id="visualizacao" class="preview" hidden><img id="imagem" alt="Pré-visualização do arquivo escolhido"></figure>
+  </section></main>
+</body>
+</html>

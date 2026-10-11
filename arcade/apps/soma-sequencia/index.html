@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Calcule a soma de todos os inteiros de 1 até o limite escolhido.">
+  <title>Soma de uma sequência · Arcade Java → JS</title>
+  <link rel="stylesheet" href="../../app.css"><script type="module" src="sequencia.js"></script>
+</head>
+<body>
+  <header class="app-header"><div class="app-header-inner"><a class="back-link" href="/arcade/">← Voltar ao catálogo</a><h1>Soma de uma sequência</h1><p class="lead">Calcule 1 + 2 + … + n sem percorrer um laço longo.</p></div></header>
+  <main class="app-main"><section class="app-card">
+    <form id="form-sequencia" novalidate>
+      <div class="field"><label for="limite">Limite (2 a 1.000.000.000)</label><input id="limite" inputmode="numeric" value="10" required></div>
+      <div class="actions"><button type="submit">Calcular soma</button></div>
+    </form>
+    <p id="mensagem" class="message" role="status" aria-live="polite"></p>
+    <output id="resultado" class="result" aria-live="polite" hidden></output>
+  </section></main>
+</body>
+</html>

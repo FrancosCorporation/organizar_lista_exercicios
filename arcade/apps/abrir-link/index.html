@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Valide e abra manualmente um endereço web.">
+  <title>Abrir endereço web · Arcade Java → JS</title>
+  <link rel="stylesheet" href="../../app.css">
+  <script type="module" src="link.js"></script>
+</head>
+<body>
+  <header class="app-header"><div class="app-header-inner">
+    <a class="back-link" href="/arcade/">← Voltar ao catálogo</a>
+    <h1>Abrir endereço web</h1>
+    <p class="lead">A versão Java abria um endereço repetidamente em segundo plano. Aqui, o link só abre quando você clicar.</p>
+  </div></header>
+  <main class="app-main"><section class="app-card">
+    <form id="form-link" novalidate>
+      <div class="field"><label for="url">Endereço HTTP ou HTTPS</label><input id="url" name="url" type="url" inputmode="url" autocomplete="url" maxlength="2048" placeholder="https://exemplo.com" required aria-describedby="dica-url"></div>
+      <p id="dica-url" class="hint">Endereços com usuário ou senha embutidos são recusados.</p>
+      <div class="actions"><button type="submit">Validar endereço</button></div>
+    </form>
+    <p id="mensagem" class="message" role="status" aria-live="polite"></p>
+    <div id="resultado" class="result" hidden><strong>Endereço validado</strong><a id="link-validado" class="button-link" target="_blank" rel="noopener noreferrer">Abrir em uma nova aba</a></div>
+  </section></main>
+</body>
+</html>

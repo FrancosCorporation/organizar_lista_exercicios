@@ -1,14 +1,14 @@
 {
- "gerado": "2026-09-25",
+ "gerado": "2026-10-11",
  "total": 347,
- "pendentes": 345,
+ "pendentes": 327,
  "apps": [
   {
    "arquivo": "Java/Em Desenvolvimeto/Abrindo Link/src/Padrao/NovaAba.java",
    "nome": "NovaAba",
    "categoria": "Swing-GUI",
-   "status": "pendente",
-   "portadoEm": null
+   "status": "portado",
+   "portadoEm": "arcade/apps/abrir-link/"
   },
   {
    "arquivo": "Java/Em Desenvolvimeto/Abrindo Link/src/Padrao/webBrowser.java",
@@ -35,15 +35,15 @@
    "arquivo": "Java/Em Desenvolvimeto/Conversor de Bases/src/FrontEnd/NewFrontEnd.java",
    "nome": "NewFrontEnd",
    "categoria": "Swing-GUI",
-   "status": "pendente",
-   "portadoEm": null
+   "status": "portado",
+   "portadoEm": "arcade/apps/conversor-bases/"
   },
   {
    "arquivo": "Java/Em Desenvolvimeto/Conversor de Bases/src/Logica/Logica_1.java",
    "nome": "Logica_1",
    "categoria": "Outros",
-   "status": "pendente",
-   "portadoEm": null
+   "status": "portado",
+   "portadoEm": "arcade/apps/conversor-bases/"
   },
   {
    "arquivo": "Java/Em Desenvolvimeto/Conversor de Bases/src/Logica/Teste.java",
@@ -119,15 +119,15 @@
    "arquivo": "Java/Em Desenvolvimeto/Strings/src/comparacoes/MetodoCompareTo.java",
    "nome": "MetodoCompareTo",
    "categoria": "JOptionPane",
-   "status": "pendente",
-   "portadoEm": null
+   "status": "portado",
+   "portadoEm": "arcade/apps/compare-to/"
   },
   {
    "arquivo": "Java/Exemplos/CaixaDialogoComReturn/src/padrao/CaixaDialogoComReturn.java",
    "nome": "CaixaDialogoComReturn",
    "categoria": "JOptionPane",
-   "status": "pendente",
-   "portadoEm": null
+   "status": "portado",
+   "portadoEm": "arcade/apps/dialogo-data/"
   },
   {
    "arquivo": "Java/Exemplos/CorrecaoManipulacaoArquivo/src/ManipularArquivos.java",
@@ -245,15 +245,15 @@
    "arquivo": "Java/Exemplos/TesteGUI/src/principal/MinhaPrimeiraJanela.java",
    "nome": "MinhaPrimeiraJanela",
    "categoria": "Swing-GUI",
-   "status": "pendente",
-   "portadoEm": null
+   "status": "portado",
+   "portadoEm": "arcade/apps/minha-primeira-janela/"
   },
   {
    "arquivo": "Java/Exemplos/TesteGUI/src/principal/SegundaJanela.java",
    "nome": "SegundaJanela",
    "categoria": "Swing-GUI",
-   "status": "pendente",
-   "portadoEm": null
+   "status": "portado",
+   "portadoEm": "arcade/apps/segunda-janela/"
   },
   {
    "arquivo": "Java/Exemplos/TesteGUI/src/principal/Teste.java",
@@ -294,8 +294,8 @@
    "arquivo": "Java/Exemplos/TudoDeImagens/src/padrao/LoadingPicture.java",
    "nome": "LoadingPicture",
    "categoria": "Swing-GUI",
-   "status": "pendente",
-   "portadoEm": null
+   "status": "portado",
+   "portadoEm": "arcade/apps/visualizar-imagem/"
   },
   {
    "arquivo": "Java/ProjetoIntegrador Chat 0.0/src/geral/BackEnd.java",
@@ -336,8 +336,8 @@
    "arquivo": "Java/Projetos Senac 1-2 semestres/Agenda/src/agenda/MostrarListaEmTabela.java",
    "nome": "MostrarListaEmTabela",
    "categoria": "Swing-GUI",
-   "status": "pendente",
-   "portadoEm": null
+   "status": "portado",
+   "portadoEm": "arcade/apps/tabela-contatos/"
   },
   {
    "arquivo": "Java/Projetos Senac 1-2 semestres/Agenda/src/agenda/Pessoa.java",
@@ -525,15 +525,15 @@
    "arquivo": "Java/Projetos Senac 1-2 semestres/Calculador/src/soma/calc.java",
    "nome": "calc",
    "categoria": "Swing-GUI",
-   "status": "pendente",
-   "portadoEm": null
+   "status": "portado",
+   "portadoEm": "arcade/apps/soma/"
   },
   {
    "arquivo": "Java/Projetos Senac 1-2 semestres/EstatisticaCalculos/src/Calculadoradeprobabilidade.java",
    "nome": "Calculadoradeprobabilidade",
    "categoria": "Console-Scanner",
-   "status": "pendente",
-   "portadoEm": null
+   "status": "portado",
+   "portadoEm": "arcade/apps/estatistica/"
   },
   {
    "arquivo": "Java/Projetos Senac 1-2 semestres/Faculdade/src/Principal/Aluno.java",
@@ -588,8 +588,8 @@
    "arquivo": "Java/Projetos Senac 1-2 semestres/Faustino2nd/src/Class_poo/Estatistica_calc_quartis.java",
    "nome": "Estatistica_calc_quartis",
    "categoria": "Console-Scanner",
-   "status": "pendente",
-   "portadoEm": null
+   "status": "portado",
+   "portadoEm": "arcade/apps/quartis/"
   },
   {
    "arquivo": "Java/Projetos Senac 1-2 semestres/Faustino2nd/src/Class_poo/Lista1.java",
@@ -1484,8 +1484,8 @@
    "arquivo": "Java/Projetos Senac 1-2 semestres/Prof Marcelo Faustino/src/Primeiro/Exercicioslista7/Exercicio7_1.java",
    "nome": "Exercicio7_1",
    "categoria": "Swing-GUI",
-   "status": "pendente",
-   "portadoEm": null
+   "status": "portado",
+   "portadoEm": "arcade/apps/pares/"
   },
   {
    "arquivo": "Java/Projetos Senac 1-2 semestres/Prof Marcelo Faustino/src/Primeiro/Exercicioslista7/Exercicio7_10_simples.java",
@@ -1498,22 +1498,22 @@
    "arquivo": "Java/Projetos Senac 1-2 semestres/Prof Marcelo Faustino/src/Primeiro/Exercicioslista7/Exercicio7_2.java",
    "nome": "Exercicio7_2",
    "categoria": "Swing-GUI",
-   "status": "pendente",
-   "portadoEm": null
+   "status": "portado",
+   "portadoEm": "arcade/apps/soma-sequencia/"
   },
   {
    "arquivo": "Java/Projetos Senac 1-2 semestres/Prof Marcelo Faustino/src/Primeiro/Exercicioslista7/Exercicio7_3.java",
    "nome": "Exercicio7_3",
    "categoria": "Swing-GUI",
-   "status": "pendente",
-   "portadoEm": null
+   "status": "portado",
+   "portadoEm": "arcade/apps/ingressos/"
   },
   {
    "arquivo": "Java/Projetos Senac 1-2 semestres/Prof Marcelo Faustino/src/Primeiro/Exercicioslista7/Exercicio7_4.java",
    "nome": "Exercicio7_4",
    "categoria": "Swing-GUI",
-   "status": "pendente",
-   "portadoEm": null
+   "status": "portado",
+   "portadoEm": "arcade/apps/motos/"
   },
   {
    "arquivo": "Java/Projetos Senac 1-2 semestres/Prof Marcelo Faustino/src/Primeiro/Exercicioslista7/Exercicio7_4_simples.java",
@@ -1876,15 +1876,15 @@
    "arquivo": "Java/Puc-Goias/1048 - Tecnicas de Programacao - CalculadoraDeData/src/padrao/ClasseDeCalculo.java",
    "nome": "ClasseDeCalculo",
    "categoria": "JOptionPane",
-   "status": "pendente",
-   "portadoEm": null
+   "status": "portado",
+   "portadoEm": "arcade/apps/dialogo-data/"
   },
   {
    "arquivo": "Java/Puc-Goias/1048 - Tecnicas de Programacao - CalculadoraDeData/src/padrao/ClassePrincipal.java",
    "nome": "ClassePrincipal",
    "categoria": "JOptionPane",
-   "status": "pendente",
-   "portadoEm": null
+   "status": "portado",
+   "portadoEm": "arcade/apps/dialogo-data/"
   },
   {
    "arquivo": "Java/Puc-Goias/1048 - Tecnicas de Programacao - Classes/src/principal/ChamandoMetodo.java",

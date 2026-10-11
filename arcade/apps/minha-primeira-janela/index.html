@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Exercício de interface: digite seu nome e receba uma saudação.">
+  <title>Minha primeira janela · Arcade Java → JS</title>
+  <link rel="stylesheet" href="../../app.css"><script type="module" src="saudacao.js"></script>
+</head>
+<body>
+  <header class="app-header"><div class="app-header-inner"><a class="back-link" href="/arcade/">← Voltar ao catálogo</a><h1>Minha primeira janela</h1><p class="lead">Um formulário simples inspirado no exercício de componentes Swing: informe um nome e veja a saudação.</p></div></header>
+  <main class="app-main"><section class="app-card">
+    <form id="form-saudacao" novalidate>
+      <div class="field"><label for="nome">Seu nome</label><input id="nome" name="nome" autocomplete="name" maxlength="80" required></div>
+      <div class="actions"><button type="submit">Mostrar saudação</button><button id="limpar" class="secondary" type="button">Limpar</button></div>
+    </form>
+    <p id="mensagem" class="message" role="status" aria-live="polite"></p>
+  </section></main>
+</body>
+</html>

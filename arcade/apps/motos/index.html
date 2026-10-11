@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Simule o crescimento mensal de duas populações de motocicletas.">
+  <title>Projeção de motocicletas · Arcade Java → JS</title>
+  <link rel="stylesheet" href="../../app.css"><script type="module" src="motos.js"></script>
+</head>
+<body>
+  <header class="app-header"><div class="app-header-inner"><a class="back-link" href="/arcade/">← Voltar ao catálogo</a><h1>Projeção de motocicletas</h1><p class="lead">Acompanhe em quantos meses o cenário de Aparecida de Goiânia ultrapassa o de Tóquio, conforme as taxas informadas no exercício.</p></div></header>
+  <main class="app-main"><section class="app-card">
+    <form id="form-motos" novalidate>
+      <div class="form-grid">
+        <div class="field"><label for="tokio">Quantidade inicial em Tóquio</label><input id="tokio" inputmode="numeric" value="55000" required></div>
+        <div class="field"><label for="aparecida">Quantidade inicial em Aparecida</label><input id="aparecida" inputmode="numeric" value="1500" required></div>
+        <div class="field"><label for="taxa-tokio">Crescimento mensal de Tóquio (%)</label><input id="taxa-tokio" inputmode="decimal" value="0,5" required></div>
+        <div class="field"><label for="taxa-aparecida">Crescimento mensal de Aparecida (%)</label><input id="taxa-aparecida" inputmode="decimal" value="0,89" required></div>
+      </div>
+      <div class="actions"><button type="submit">Calcular projeção</button></div>
+    </form>
+    <p id="mensagem" class="message" role="status" aria-live="polite"></p>
+    <dl id="resumo" class="metric" hidden></dl>
+    <details id="detalhes" class="result" hidden><summary>Ver evolução mensal</summary><div class="data-table-wrap"><table><thead><tr><th scope="col">Mês</th><th scope="col">Tóquio</th><th scope="col">Aparecida</th></tr></thead><tbody id="linhas"></tbody></table></div></details>
+  </section></main>
+</body>
+</html>

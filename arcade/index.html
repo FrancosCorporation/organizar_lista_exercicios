@@ -4,14 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arcade Java → JS — organizar_lista_exercicios</title>
+  <meta name="description" content="Catálogo local de exercícios Java com salas convertidas para a web.">
+  <meta name="theme-color" content="#101820">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="topo">
     <h1>🕹️ Arcade Java → JS</h1>
-    <p id="resumo" class="subtitulo">carregando inventário...</p>
+    <p class="introducao">Encontre um exercício e abra as versões que já ganharam uma sala interativa.</p>
+    <p id="resumo" class="subtitulo" aria-live="polite">Carregando o inventário…</p>
   </header>
-  <main id="menu" class="menu"></main>
+  <section class="controles" aria-label="Busca e filtros do catálogo">
+    <div class="campo busca-campo">
+      <label for="busca">Buscar exercício</label>
+      <input id="busca" type="search" placeholder="Nome, categoria ou arquivo" autocomplete="off">
+    </div>
+    <div class="campo">
+      <label for="categoria">Categoria</label>
+      <select id="categoria">
+        <option value="">Todas as categorias</option>
+      </select>
+    </div>
+    <div class="campo">
+      <label for="status">Disponibilidade</label>
+      <select id="status">
+        <option value="">Todas</option>
+        <option value="local">Sala no arcade</option>
+        <option value="externo">Portado em outro projeto</option>
+        <option value="pendente">Na fila</option>
+      </select>
+    </div>
+    <button id="limpar-filtros" class="botao-secundario" type="button">Limpar filtros</button>
+  </section>
+  <p id="estado" class="estado" role="status" aria-live="polite">Carregando o catálogo…</p>
+  <main id="menu" class="menu" aria-label="Exercícios por categoria"></main>
   <script src="menu.js"></script>
 </body>
 </html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare cenários de preço, vendas e despesas para um exercício de ingressos.">
+  <title>Simulação de ingressos · Arcade Java → JS</title>
+  <link rel="stylesheet" href="../../app.css"><script type="module" src="ingressos.js"></script>
+</head>
+<body>
+  <header class="app-header"><div class="app-header-inner"><a class="back-link" href="/arcade/">← Voltar ao catálogo</a><h1>Simulação de ingressos</h1><p class="lead">Compare o lucro estimado ao reduzir o preço e vender mais ingressos. Os valores iniciais vêm do exercício Java.</p></div></header>
+  <main class="app-main"><section class="app-card">
+    <form id="form-ingressos" novalidate>
+      <div class="form-grid">
+        <div class="field"><label for="preco">Preço inicial (R$)</label><input id="preco" inputmode="decimal" value="6,00" required></div>
+        <div class="field"><label for="quantidade">Ingressos iniciais</label><input id="quantidade" inputmode="numeric" value="130" required></div>
+        <div class="field"><label for="despesas">Despesas (R$)</label><input id="despesas" inputmode="decimal" value="300,00" required></div>
+        <div class="field"><label for="reducao">Redução por etapa (R$)</label><input id="reducao" inputmode="decimal" value="0,60" required></div>
+        <div class="field"><label for="aumento">Ingressos extras por etapa</label><input id="aumento" inputmode="numeric" value="30" required></div>
+      </div>
+      <div class="actions"><button type="submit">Comparar cenários</button></div>
+    </form>
+    <p id="mensagem" class="message" role="status" aria-live="polite"></p>
+    <div class="data-table-wrap"><table id="tabela" hidden><caption class="hint">Cenários com preço de pelo menos R$ 1,00 e lucro positivo</caption><thead><tr><th scope="col">Preço</th><th scope="col">Ingressos</th><th scope="col">Lucro estimado</th></tr></thead><tbody id="linhas"></tbody></table></div>
+  </section></main>
+</body>
+</html>

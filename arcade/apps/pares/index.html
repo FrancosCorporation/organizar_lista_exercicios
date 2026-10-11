@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Liste os números pares até o limite informado.">
+  <title>Números pares até o limite · Arcade Java → JS</title>
+  <link rel="stylesheet" href="../../app.css"><script type="module" src="pares.js"></script>
+</head>
+<body>
+  <header class="app-header"><div class="app-header-inner"><a class="back-link" href="/arcade/">← Voltar ao catálogo</a><h1>Números pares até o limite</h1><p class="lead">Informe um inteiro maior que 1. Se ele for par, também aparece na lista, como no exercício original.</p></div></header>
+  <main class="app-main"><section class="app-card">
+    <form id="form-pares" novalidate>
+      <div class="field"><label for="limite">Limite (2 a 100.000)</label><input id="limite" inputmode="numeric" value="20" required></div>
+      <div class="actions"><button type="submit">Calcular pares</button></div>
+    </form>
+    <p id="mensagem" class="message" role="status" aria-live="polite"></p>
+    <pre id="resultado" class="result output-list" aria-label="Números pares encontrados" hidden></pre>
+  </section></main>
+</body>
+</html>

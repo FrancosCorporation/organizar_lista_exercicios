@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demonstração interativa de campos, botões e opção de exibição.">
+  <title>Componentes de uma janela · Arcade Java → JS</title>
+  <link rel="stylesheet" href="../../app.css"><script type="module" src="componentes.js"></script>
+</head>
+<body>
+  <header class="app-header"><div class="app-header-inner"><a class="back-link" href="/arcade/">← Voltar ao catálogo</a><h1>Componentes de uma janela</h1><p class="lead">O exercício Java mostrava campos, botões e uma caixa de seleção. Agora cada controle tem uma ação visível.</p></div></header>
+  <main class="app-main"><section class="app-card">
+    <form id="form-componentes" novalidate>
+      <div class="field"><label for="texto">Texto para exibir</label><input id="texto" maxlength="120" placeholder="Escreva uma mensagem"></div>
+      <label class="check-field"><input id="detalhes" type="checkbox"><span>Mostrar uma explicação sobre a ação</span></label>
+      <div class="actions"><button type="submit">Exibir mensagem</button><button id="limpar" class="secondary" type="button">Limpar</button></div>
+    </form>
+    <p id="mensagem" class="message" role="status" aria-live="polite"></p>
+  </section></main>
+</body>
+</html>
