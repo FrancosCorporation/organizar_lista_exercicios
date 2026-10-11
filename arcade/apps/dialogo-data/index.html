@@ -5,74 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diálogos com Return e Validação de Data</title>
   <link rel="stylesheet" href="../../style.css">
-  <style>
-    .sala { max-width:560px; margin:40px auto; padding:0 16px; }
-    .sala h1 { font-size:20px; margin-bottom:14px; }
-    .linha { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
-    .linha input { background:var(--fundo); border:1px solid var(--borda); color:var(--texto); border-radius:8px; padding:10px 12px; font-size:15px; width:110px; }
-    button { background:var(--verde); border:none; color:#fff; font-weight:700; border-radius:8px; padding:12px 18px; font-size:15px; cursor:pointer; }
-    .modal { position:fixed; inset:0; background:rgba(0,0,0,.7); display:flex; align-items:center; justify-content:center; }
-    .modal[hidden] { display:none; }
-    .modal-caixa { background:var(--carta); border:1px solid var(--borda); border-radius:12px; padding:24px; display:flex; flex-direction:column; gap:14px; min-width:300px; text-align:center; }
-    .modal-caixa b { color:#d29922; }
-    .botoes { display:flex; gap:10px; justify-content:center; }
-    .cancelar { background:#b3413b; }
-    .resultado { margin-top:16px; background:var(--carta); border:1px solid var(--borda); border-radius:10px; padding:14px; font-family:Consolas,monospace; font-size:14px; white-space:pre-line; }
-    a.voltar { color:var(--suave); font-size:13px; display:inline-block; margin-bottom:12px; }
-  </style>
+  <link rel="stylesheet" href="../../salas.css">
 </head>
 <body>
   <div class="sala">
     <a class="voltar" href="../../index.html">← voltar ao arcade</a>
     <h1>💬 Diálogo com Return + Validação de Data</h1>
-    <p style="color:var(--suave);font-size:13px;margin-bottom:14px">Ports do <code>CaixaDialogoComReturn.java</code> e <code>CalculadoraDeData/ClasseDeCalculo.java</code>.</p>
+    <p class="descricao">Ports do <code>CaixaDialogoComReturn.java</code> e <code>CalculadoraDeData/ClasseDeCalculo.java</code>.</p>
 
     <div class="linha">
-      <input id="dia" type="number" value="30" title="dia">
-      <input id="mes" type="number" value="2" min="1" max="12" title="mês">
-      <button id="validar-data">Validar data</button>
+      <label class="campo">Dia <input id="dia" type="number" value="30" min="1" max="31"></label>
+      <label class="campo">Mês <input id="mes" type="number" value="2" min="1" max="12"></label>
+      <button id="validar-data" type="button">Validar data</button>
     </div>
-    <button id="perguntar">Abrir diálogo (atencao)</button>
-    <div id="saida" class="resultado" hidden></div>
+    <button id="perguntar" type="button">Abrir diálogo (atenção)</button>
+    <div id="saida" class="resultado" aria-live="polite" hidden></div>
   </div>
 
-  <div id="modal" class="modal" hidden>
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="titulo-modal" tabindex="-1" hidden>
     <div class="modal-caixa">
-      <span>⚠ <b>Atenção</b></span>
-      <span>atencao</span>
+      <h2 id="titulo-modal">Atenção</h2>
+      <p>Confirme para registrar verdadeiro ou cancele para registrar falso.</p>
       <div class="botoes">
-        <button id="confirmar">Confirmar</button>
-        <button id="cancelar" class="cancelar">Cancelar</button>
+        <button id="confirmar" type="button">Confirmar</button>
+        <button id="cancelar" class="cancelar" type="button">Cancelar</button>
       </div>
     </div>
   </div>
 
-  <script type="module">
-    import { validarDiaMes, dentroDoLimite } from './dialogo.js';
-    const $ = (id) => document.getElementById(id);
-
-    // retornapergunta: true apenas no Confirmar (índice 0), fiel ao original
-    $('perguntar').onclick = () => { $('modal').hidden = false; };
-    $('confirmar').onclick = () => { $('modal').hidden = true; resposta(true); };
-    $('cancelar').onclick = () => { $('modal').hidden = true; resposta(false); };
-    function resposta(retorno) {
-      $('saida').hidden = false;
-      $('saida').textContent += (retorno ? 'true' : 'false') + '\n';
-    }
-
-    // validar data: verificarMes (fev ≤ 29) + verificador de limites (1..31)
-    $('validar-data').onclick = () => {
-      const dia = Number($('dia').value), mes = Number($('mes').value);
-      let texto;
-      if (!dentroDoLimite(mes, 1, 12)) texto = 'Infelizmente voce digitou um mes invalido!!';
-      else if (!dentroDoLimite(dia, 1, 31)) texto = 'Infelizmente voce digitou o dia: ' + dia + ', mas ele é invalido!!';
-      else {
-        const r = validarDiaMes(dia, mes);
-        texto = r.valido ? `Data valida: ${dia}/${mes}` : r.mensagem;
-      }
-      $('saida').hidden = false;
-      $('saida').textContent = texto;
-    };
-  </script>
+  <script type="module" src="./pagina.js"></script>
 </body>
 </html>

@@ -5,37 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Método CompareTo — Ordenação</title>
   <link rel="stylesheet" href="../../style.css">
-  <style>
-    .sala { max-width:640px; margin:40px auto; padding:0 16px; }
-    .sala h1 { font-size:20px; margin-bottom:14px; }
-    .campo { display:flex; flex-direction:column; gap:6px; margin-bottom:12px; color:var(--suave); font-size:13px; }
-    textarea { background:var(--fundo); border:1px solid var(--borda); color:var(--texto); border-radius:8px; padding:10px 12px; font-size:15px; min-height:90px; resize:vertical; }
-    button { background:var(--verde); border:none; color:#fff; font-weight:700; border-radius:8px; padding:12px 18px; font-size:15px; cursor:pointer; }
-    .resultado { margin-top:16px; background:var(--carta); border:1px solid var(--borda); border-radius:10px; padding:14px; font-size:14px; }
-    .resultado ol { padding-left:22px; }
-    a.voltar { color:var(--suave); font-size:13px; display:inline-block; margin-bottom:12px; }
-  </style>
+  <link rel="stylesheet" href="../../salas.css">
 </head>
 <body>
   <div class="sala">
     <a class="voltar" href="../../index.html">← voltar ao arcade</a>
     <h1>🔤 Método CompareTo</h1>
-    <p style="color:var(--suave);font-size:13px;margin-bottom:14px">Port do <code>MetodoCompareTo.java</code> — ordena nomes com o algoritmo original de ranking por <code>compareToIgnoreCase</code> (um nome por linha).</p>
+    <p class="descricao">Port do <code>MetodoCompareTo.java</code> — ordena nomes com o algoritmo original de ranking por <code>compareToIgnoreCase</code> (um nome por linha).</p>
     <label class="campo">nomes
       <textarea id="nomes">Rodolfo&#10;ana&#10;Bruna&#10;carlos&#10;Ana</textarea>
     </label>
-    <button id="ordenar">Ordenar</button>
-    <div id="saida" class="resultado" hidden></div>
+    <button id="ordenar" type="button">Ordenar</button>
+    <div id="saida" class="resultado" aria-live="polite" hidden></div>
   </div>
-  <script type="module">
-    import { ordenarPorCompareTo } from './compare.js';
-    document.getElementById('ordenar').onclick = () => {
-      const nomes = document.getElementById('nomes').value.split('\n').map((n) => n.trim()).filter(Boolean);
-      const ordenados = ordenarPorCompareTo(nomes);
-      const saida = document.getElementById('saida');
-      saida.hidden = false;
-      saida.innerHTML = '<ol>' + ordenados.map((n) => `<li>${n}</li>`).join('') + '</ol>';
-    };
-  </script>
+  <script type="module" src="./pagina.js"></script>
 </body>
 </html>

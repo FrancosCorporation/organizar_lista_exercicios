@@ -5,36 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cálculo de Posição (Quartis)</title>
   <link rel="stylesheet" href="../../style.css">
-  <style>
-    .sala { max-width:520px; margin:40px auto; padding:0 16px; }
-    .sala h1 { font-size:20px; margin-bottom:14px; }
-    .campo { display:flex; flex-direction:column; gap:6px; margin-bottom:12px; color:var(--suave); font-size:13px; }
-    .campo input { background:var(--fundo); border:1px solid var(--borda); color:var(--texto); border-radius:8px; padding:10px 12px; font-size:15px; }
-    button { background:var(--verde); border:none; color:#fff; font-weight:700; border-radius:8px; padding:12px 18px; font-size:15px; cursor:pointer; }
-    .resultado { margin-top:16px; background:var(--carta); border:1px solid var(--borda); border-radius:10px; padding:14px; font-family:Consolas,monospace; font-size:14px; white-space:pre-line; }
-    a.voltar { color:var(--suave); font-size:13px; display:inline-block; margin-bottom:12px; }
-  </style>
+  <link rel="stylesheet" href="../../salas.css">
 </head>
 <body>
   <div class="sala">
     <a class="voltar" href="../../index.html">← voltar ao arcade</a>
     <h1>📊 Cálculo de Posição</h1>
-    <p style="color:var(--suave);font-size:13px;margin-bottom:14px">Port do <code>Estatistica_calc_quartis.java</code> — porcentagem da posição na sequência: ((f − 0,5) / n) × 100.</p>
+    <p class="descricao">Port do <code>Estatistica_calc_quartis.java</code> — porcentagem da posição na sequência: ((f − 0,5) / n) × 100.</p>
     <label class="campo">n — número total da sequência <input id="n" type="number" value="10"></label>
     <label class="campo">f — posição que deseja calcular <input id="f" type="number" value="3"></label>
-    <button id="calcular">Calcular</button>
-    <div id="saida" class="resultado" hidden></div>
+    <button id="calcular" type="button">Calcular</button>
+    <div id="saida" class="resultado" aria-live="polite" hidden></div>
   </div>
-  <script type="module">
-    import { porcentagemPosicao } from './quartis.js';
-    document.getElementById('calcular').onclick = () => {
-      const saida = document.getElementById('saida');
-      try {
-        const r = porcentagemPosicao(Number(document.getElementById('f').value), Number(document.getElementById('n').value));
-        saida.hidden = false;
-        saida.textContent = `A sua porcentagem é: ${r}`;
-      } catch (e) { saida.hidden = false; saida.textContent = e.message; }
-    };
-  </script>
+  <script type="module" src="./pagina.js"></script>
 </body>
 </html>

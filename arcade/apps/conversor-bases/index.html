@@ -5,21 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conversor de Bases</title>
   <link rel="stylesheet" href="../../style.css">
-  <style>
-    .sala { max-width:520px; margin:40px auto; padding:0 16px; }
-    .sala h1 { font-size:20px; margin-bottom:14px; }
-    .campo { display:flex; flex-direction:column; gap:6px; margin-bottom:12px; color:var(--suave); font-size:13px; }
-    .campo input, .campo select { background:var(--fundo); border:1px solid var(--borda); color:var(--texto); border-radius:8px; padding:10px 12px; font-size:15px; }
-    button { background:var(--verde); border:none; color:#fff; font-weight:700; border-radius:8px; padding:12px 18px; font-size:15px; cursor:pointer; }
-    .resultado { margin-top:16px; background:var(--carta); border:1px solid var(--borda); border-radius:10px; padding:14px; font-family:Consolas,monospace; font-size:14px; white-space:pre-line; }
-    a.voltar { color:var(--suave); font-size:13px; display:inline-block; margin-bottom:12px; }
-  </style>
+  <link rel="stylesheet" href="../../salas.css">
 </head>
 <body>
   <div class="sala">
     <a class="voltar" href="../../index.html">← voltar ao arcade</a>
     <h1>🔢 Conversor de Bases</h1>
-    <p style="color:var(--suave);font-size:13px;margin-bottom:14px">Port do exercício <code>Conversor de Bases/Logica_1.java</code>.</p>
+    <p class="descricao">Port do exercício <code>Conversor de Bases/Logica_1.java</code>.</p>
     <label class="campo">base de entrada
       <select id="base">
         <option value="10">Decimal (10)</option>
@@ -29,19 +21,9 @@
       </select>
     </label>
     <label class="campo">valor <input id="valor" value="255" autocomplete="off"></label>
-    <button id="calcular">Converter</button>
-    <div id="saida" class="resultado" hidden></div>
+    <button id="calcular" type="button">Converter</button>
+    <div id="saida" class="resultado" aria-live="polite" hidden></div>
   </div>
-  <script type="module">
-    import { converter } from './conversor.js';
-    document.getElementById('calcular').onclick = () => {
-      const saida = document.getElementById('saida');
-      try {
-        const r = converter(document.getElementById('valor').value.trim(), Number(document.getElementById('base').value));
-        saida.hidden = false;
-        saida.textContent = `Decimal: ${r.decimal}\nBinário: ${r.binario}\nOctal: ${r.octal}\nHexadecimal: ${r.hexadecimal}`;
-      } catch (e) { saida.hidden = false; saida.textContent = e.message; }
-    };
-  </script>
+  <script type="module" src="./pagina.js"></script>
 </body>
 </html>
