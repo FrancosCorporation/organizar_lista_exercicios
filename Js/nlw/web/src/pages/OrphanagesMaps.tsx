@@ -3,7 +3,7 @@ import MarkerImg from '../images/marker.svg';
 import { Link } from 'react-router-dom';
 import { FiPlus } from 'react-icons/fi';
 import '../styles/pages/orphanages-maps.css'
-import { Map, TileLayer } from 'react-leaflet';
+import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 function OrphanagesMaps() {
     return (
@@ -21,14 +21,16 @@ function OrphanagesMaps() {
                 </footer>
 
             </aside>
-            <Map 
+            <MapContainer
             center={[-16.3565191,-49.4974716]}
             zoom={15}
             style={{width:'100%', height:'100%'}}
             >
-                {/* <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"/> */}
-                <TileLayer url={`https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}/>
-            </Map>
+                <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+            </MapContainer>
             
             <Link to="" className='create-orphanage'>
                 <FiPlus size={32} color="#FFF" />

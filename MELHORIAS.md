@@ -6,6 +6,7 @@ Objetivo: transformar a coleção de exercícios Java em um catálogo web local 
 
 - [x] **SEC-01** — Limitar `server.js:6-94` aos arquivos estáticos de `arcade/`, ao host local e aos métodos de leitura; validar caminhos já decodificados e impedir acesso a arquivos ocultos e links simbólicos para fora da pasta. Verificação: `node --check server.js` e revisão estática da resolução de caminhos e cabeçalhos.
 - [x] **SEC-02** — Remover a interpolação insegura de `arcade/apps/compare-to/pagina.js:6-21` e retirar scripts/estilos embutidos das cinco salas existentes para que a política CSP funcione sem exceções inline. Verificação: `node --check` dos módulos e busca estática sem `innerHTML`, `<script>` embutido ou `<style>` embutido nas salas.
+- [x] **SEC-03** — Substituir o CRA 3.4.3 e seu `yarn.lock` vulnerável em `Js/nlw/web/` por Vite e dependências atualizadas, removendo a chave Mapbox obrigatória e exibindo atribuição do OpenStreetMap. Verificação: `npm audit --audit-level=high` sem vulnerabilidades, typecheck e build.
 
 ## P2 — Correção e experiência
 
@@ -21,6 +22,7 @@ Objetivo: transformar a coleção de exercícios Java em um catálogo web local 
 ## P4 — Manutenção e CI
 
 - [x] **DEVOPS-01** — Declarar Node.js 22.12+ e validar no CI, em Node 22/24, a sintaxe JavaScript, as origens do manifesto, as salas locais e os números documentados. A validação não executa a suíte comportamental. Verificação: `npm run check` e workflow estático.
+- [x] **DEVOPS-02** — Adicionar o app Happy à CI em Node 22/24 com instalação reproduzível, audit de dependências, verificação de tipos e build de produção; a suíte de testes não é executada. Verificação: os quatro comandos passaram localmente e a CI deve confirmar após o push.
 
 ## Fora deste ciclo
 
