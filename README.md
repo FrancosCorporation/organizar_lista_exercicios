@@ -4,7 +4,7 @@ Coleção de exercícios acadêmicos em Java, organizada por semestre e assunto.
 
 ## Abrir o arcade
 
-Requer Node.js 18 ou superior. O projeto não usa dependências externas.
+Requer Node.js 22.12 ou superior. O projeto não usa dependências externas.
 
 ```bash
 npm start
@@ -26,6 +26,7 @@ Use a busca para localizar por nome, categoria ou caminho do arquivo. Os filtros
 
 ```bash
 npm start   # servidor local em http://127.0.0.1:3000/arcade/
+npm run check # valida manifesto, origens, salas e sintaxe JavaScript
 npm test    # testes automatizados das funções de cálculo das cinco primeiras salas
 ```
 

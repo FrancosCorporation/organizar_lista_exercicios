@@ -18,7 +18,11 @@ Objetivo: transformar a coleção de exercícios Java em um catálogo web local 
 
 - [x] **DOC-01** — Atualizar `README.md:3-38` com o estado real da coleção, comando de início, comportamento local do servidor e número atualizado de itens. Verificação: comparar as instruções e a contagem documentada com `package.json` e `arcade/manifest.json`.
 
+## P4 — Manutenção e CI
+
+- [x] **DEVOPS-01** — Declarar Node.js 22.12+ e validar no CI, em Node 22/24, a sintaxe JavaScript, as origens do manifesto, as salas locais e os números documentados. A validação não executa a suíte comportamental. Verificação: `npm run check` e workflow estático.
+
 ## Fora deste ciclo
 
 - Conversão dos **327 programas** que ainda aparecem na fila; priorizar GUI e continuar em lotes, preservando a finalidade de cada Java original.
-- Execução da suíte de testes existente; esta rodada fará apenas verificações estáticas.
+- Execução da suíte de testes existente; esta rodada fez apenas verificações estáticas.

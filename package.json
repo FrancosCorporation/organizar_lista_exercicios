@@ -6,6 +6,10 @@
   "type": "module",
   "license": "MIT",
   "author": "Rodolfo Franco (FrancosCorporation)",
-  "scripts": { "start": "node server.js", "test": "node test/arcade-test.mjs" },
-  "engines": { "node": ">=18" }
+  "scripts": {
+    "start": "node server.js",
+    "check": "node scripts/check-catalog.mjs",
+    "test": "node test/arcade-test.mjs"
+  },
+  "engines": { "node": ">=22.12.0" }
 }
