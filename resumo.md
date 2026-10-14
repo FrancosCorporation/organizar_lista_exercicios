@@ -48,4 +48,33 @@ Conforme matriz mapeada na seção de Roadmap do `plan.md`:
 - **Última atividade realizada:** Criação integral do `plan.md`. Arquitetura do repositório mapeada.
 - **Arquivos importantes:** O diretório em questão é o próprio `/home/servidor/Git/organizar_lista_exercicios`.
 - **Riscos Relevantes:** O arquivo `Js/nlw/web/yarn.lock` deve ser deletado manualmente no modelo executor para limpar a árvore de transação de forma limpa. Fazer `git rm` nesse lock específico se preciso.
-- **Próxima Tarefa Recomendada:** Executar rigorosamente os roteiros P0 e P1 definidos na sec. 3.6 e 3.7 do `plan.md`.
+---
+
+## Sessão 2026-10-14 (Execução da Fase 1 — OBJ-01)
+
+### Resumo executivo
+Execução do objetivo P0 **OBJ-01** do `plan.md`: migração do app Happy (`Js/nlw/web`) de CRA 3.4.3/Yarn para Vite 8 + React 19 + TypeScript 5.9. Push em `master` como `b74cb20`; CI `38507554202` verde (catálogo + job `happy-web` em Node 22/24). `npm audit` completo = **0 vulnerabilidades** (antes: 197 alertas Dependabot no `yarn.lock` legado).
+
+### Atividades
+- Removidos `react-scripts`, `yarn.lock`, `public/index.html`, `src/react-app-env.d.ts`.
+- Novos: `vite.config.ts` (dev/preview presos a `127.0.0.1`), `index.html` na raiz (Vite), `src/vite-env.d.ts`, `package-lock.json`.
+- Código portado: `createRoot` (React 19), `<Routes>/element` (react-router-dom 7), `MapContainer`/OSM com atribuição (react-leaflet 5), sem token Mapbox.
+- CI: novo job `happy-web` (npm ci → audit high → typecheck → build) em Node 22/24.
+- `.gitignore` passou a cobrir `/dist`.
+
+### Validações (todas executadas)
+- `npm audit` (completo): 0 vulnerabilidades.
+- `npm run typecheck` (`tsc --noEmit`): limpo.
+- `npm run build` (Vite 8.3.4): OK — 78 módulos, 416 kB JS (128 kB gzip).
+- `npm run check` (raiz): catálogo consistente (347 programas / 327 na fila).
+- `git diff --check`: limpo.
+- CI remota `38507554202`: sucesso nos dois jobs × Node 22/24.
+
+### Estado final
+- `HEAD == origin/master == b74cb20`. Sem testes comportamentais visuais (TEST-01 segue vedado).
+- Item `plan.md` OBJ-01 concluído; restam OBJ-02 (parcial — CI do web criada) e OBJ-03 (327 conversões na fila).
+
+### Continuidade para o próximo agente
+- Checkout pode ser removido após o push deste resumo (projeto não é exceção de limpeza). `node_modules/` e `dist/` são regeneráveis; não há `.env` nem artefatos locais a preservar.
+- Próxima ação neste repo (quando reaberto): retomar OBJ-03 — conversão em lote dos 327 programas restantes do `arcade/manifest.json`.
+
