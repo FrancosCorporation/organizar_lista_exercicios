@@ -35,6 +35,5 @@ npm test    # testes automatizados das funções de cálculo das cinco primeiras
 - `Java/` — exercícios originais, mantidos para consulta.
 - `arcade/manifest.json` — inventário de programas, categorias e conversões.
 - `arcade/apps/` — salas web feitas com JavaScript e HTML.
-- `Js/nlw/web/` — interface React Happy; consulte seu README para instalação e execução.
 - `test/` — verificações automatizadas das funções convertidas.
 - `MELHORIAS.md` — itens de evolução do catálogo.
